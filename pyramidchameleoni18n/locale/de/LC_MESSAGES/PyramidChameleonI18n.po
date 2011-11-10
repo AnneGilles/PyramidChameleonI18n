@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: PyramidChameleonI18n 0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2011-11-10 10:37+0100\n"
-"PO-Revision-Date: 2011-11-10 10:39+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2011-11-10 10:40+0100\n"
+"Last-Translator: Christoph Scheid <c@openmusiccontest.org>\n"
 "Language-Team: de <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
@@ -22,5 +22,5 @@ msgstr ""
 #. Default: Search documentation
 #: pyramidchameleoni18n/templates/mytemplate.pt:36
 msgid "search_documentation"
-msgstr ""
+msgstr "Dokumentation durchsuchen"
 
