@@ -14,6 +14,8 @@ requires = [
     'pyramid_tm',
     'pyramid_debugtoolbar',
     'zope.sqlalchemy',
+    'Babel',
+    'lingua',
     ]
 
 if sys.version_info[:3] < (2,5,0):
@@ -43,5 +45,9 @@ setup(name='PyramidChameleonI18n',
       main = pyramidchameleoni18n:main
       """,
       paster_plugins=['pyramid'],
+      message_extractors = { '.': [
+          ('**.py',   'lingua_python', None ),
+          ('**.pt',   'lingua_xml', None ),
+          ]},
       )
 
