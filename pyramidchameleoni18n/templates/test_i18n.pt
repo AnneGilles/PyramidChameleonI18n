@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" 
       xmlns:tal="http://xml.zope.org/namespaces/tal" 
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      i18n:domain="pyramidchameleoni18n"> 
+      i18n:domain="PyramidChameleonI18n"> 
   <head> 
     <title>Testing i18n</title> 
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
