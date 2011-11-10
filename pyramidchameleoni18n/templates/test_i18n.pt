@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" 
+      xmlns:tal="http://xml.zope.org/namespaces/tal" 
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="pyramidchameleoni18n"> 
+  <head> 
+    <title>Testing i18n</title> 
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+  </head> 
+  <body> 
+    <span i18n:translate=""> 
+      <span tal:replace="name" i18n:name="name" /> was born in 
+      <span tal:replace="country_of_birth" i18n:name="country" />. 
+    </span> 
+  </body> 
+</html> 
