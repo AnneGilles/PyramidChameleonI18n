@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="PyramidChameleonI18n">
+<head>
+  <title>The Pyramid Web Application Development Framework</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+  <meta name="keywords" content="python web application" />
+  <meta name="description" content="pyramid web application" />
+  <link rel="shortcut icon" href="${request.static_url('pyramidchameleoni18n:static/favicon.ico')}" />
+  <link rel="stylesheet" href="${request.static_url('pyramidchameleoni18n:static/pylons.css')}" type="text/css" media="screen" charset="utf-8" />
+  <link rel="stylesheet" href="http://static.pylonsproject.org/fonts/nobile/stylesheet.css" media="screen" />
+  <link rel="stylesheet" href="http://static.pylonsproject.org/fonts/neuton/stylesheet.css" media="screen" />
+  <!-- for deform -->
+  <link rel="stylesheet" href="${request.static_url('pyramidchameleoni18n:static/deform/form.css')}" type="text/css" media="screen" charset="utf-8" />
+    <script type="text/javascript" src="/static/deform/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="/static/deform/deform.js"></script>
+
+  <!--[if lte IE 6]>
+  <link rel="stylesheet" href="${request.static_url('pyramidchameleoni18n:static/ie6.css')}" type="text/css" media="screen" charset="utf-8" />
+  <![endif]-->
+</head>
+<body>
+  <div id="wrap">
+    <div id="top">
+      <div class="top align-center">
+        <div><img src="${request.static_url('pyramidchameleoni18n:static/pyramid.png')}" width="750" height="169" alt="pyramid"/></div>
+      </div>
+    </div>
+    <div id="middle">
+      <div class="middle align-center">
+        <p class="app-welcome" i18n:translate="">
+          Welcome to TestForm!
+        </p>
+      </div>
+    </div>
+    <div id="bottom">
+      <div class="bottom">
+	<div id="form" i18n:translate="" tal:replace="structure form"/>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <div class="footer">&copy; Copyright 2008-2011, Agendaless Consulting.</div>
+  </div>
+    <!-- loading deform -->
+    <script type="text/javascript">deform.load()</script>
+</body>
+</html>

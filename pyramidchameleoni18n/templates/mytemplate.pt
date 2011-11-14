@@ -39,6 +39,9 @@
                 <input type="submit" id="x" value="Go" />
             </form>
 	  <span i18n:translate=''>This is another test</span>
+	  <p>
+	    <a href="${request.route_url('deform-form')}" i18n:translate="to-deform-form">See the deform form.</a>
+	  </p>
         </div>
         <div id="right" class="align-left">
           <h2 i18n:translate="">Pyramid links</h2>

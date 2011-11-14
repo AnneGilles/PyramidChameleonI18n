@@ -52,5 +52,10 @@ def main(global_config, **settings):
                     route_name='test_i18n',
                     renderer='templates/test_i18n.pt')
 
+    config.add_route('deform-form', '/form')
+    config.add_view('pyramidchameleoni18n.views.deform_form_view',
+                    route_name='deform-form',
+                    renderer='templates/deform-form.pt')
+
     return config.make_wsgi_app()
 
