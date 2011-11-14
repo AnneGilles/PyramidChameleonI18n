@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyramidChameleonI18n 0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-11-10 14:13+0100\n"
+"POT-Creation-Date: 2011-11-14 20:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,22 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
+
+#: pyramidchameleoni18n/views.py:56
+msgid "Your Name"
+msgstr ""
+
+#: pyramidchameleoni18n/views.py:58
+msgid "Email-Address"
+msgstr ""
+
+#: pyramidchameleoni18n/views.py:66
+msgid "Submit"
+msgstr ""
+
+#: pyramidchameleoni18n/templates/deform-form.pt:32
+msgid "Welcome to TestForm!"
+msgstr ""
 
 #: pyramidchameleoni18n/templates/mytemplate.pt:27
 msgid ""
@@ -33,16 +49,16 @@ msgstr ""
 msgid "This is another test"
 msgstr ""
 
-#: pyramidchameleoni18n/templates/mytemplate.pt:44
+#. Default: See the deform form.
+#: pyramidchameleoni18n/templates/mytemplate.pt:43
+msgid "to-deform-form"
+msgstr ""
+
+#: pyramidchameleoni18n/templates/mytemplate.pt:47
 msgid "Pyramid links"
 msgstr ""
 
-#. Default: This is a test
-#: pyramidchameleoni18n/templates/test.pt:7
-msgid "test"
-msgstr ""
-
-#: pyramidchameleoni18n/templates/test_i18n.pt:11
+#: pyramidchameleoni18n/templates/test_i18n.pt:12
 msgid "${name} was born in ${country}."
 msgstr ""
 
