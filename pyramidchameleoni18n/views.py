@@ -2,11 +2,26 @@ from pyramidchameleoni18n.models import DBSession
 from pyramidchameleoni18n.models import MyModel
 
 from pyramid.i18n import get_locale_name
+from pyramid.i18n import get_localizer
 from babel.core import Locale
-#from pyramid.i18n import TranslationString
+
+import deform
+from deform import Form
+from deform import ValidationFailure
+import colander
 
 from pyramid.i18n import TranslationStringFactory
 _ = TranslationStringFactory('PyramidChameleonI18n')
+
+def translator(term):
+    return get_localizer(get_current_request()).translate(term)
+
+from pkg_resources import resource_filename
+deform_template_dir = resource_filename('pyramidchameleoni18n', 'templates/')
+
+zpt_renderer = deform.ZPTRendererFactory(
+    [deform_template_dir], translator=translator)
+
 
 def my_view(request):
     locale_name = get_locale_name(request)
@@ -42,10 +57,6 @@ def test_i18n_view(request):
             'country_of_birth':'Baz'}
 
 
-import deform
-from deform import Form
-from deform import ValidationFailure
-import colander
 
 def deform_form_view(request):
     locale_name = get_locale_name(request)
@@ -64,13 +75,16 @@ def deform_form_view(request):
     schema = TestFormSchema()
     form = deform.Form(schema,
                        buttons=[deform.Button('submit', _('Submit'))])
+    form.set_default_renderer(zpt_renderer)
 
     if 'submit' in request.POST:
+        # the form was submitted
         controls = request.POST.items()
         try:
             appstruct = form.validate(controls)
             print "the controls: " + str(controls)
             print "the appstruct: " + str(appstruct)
+
         except ValidationFailure, e:
             return{'form': e.render()}
         print "OK: " + str(dir(form))
