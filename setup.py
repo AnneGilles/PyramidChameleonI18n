@@ -16,6 +16,7 @@ requires = [
     'zope.sqlalchemy',
     'Babel',
     'lingua',
+    'deform'
     ]
 
 if sys.version_info[:3] < (2,5,0):
