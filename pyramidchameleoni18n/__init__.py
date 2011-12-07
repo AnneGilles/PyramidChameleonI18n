@@ -7,11 +7,13 @@ from pyramidchameleoni18n.models import initialize_sql
 from translationstring import TranslationStringFactory
 _ = TranslationStringFactory('pyramidchameleoni18n')
 
+
 def translator(term):
     return get_localizer(get_current_request().translate(term))
 
 from pyramid.events import NewRequest
 from pyramid.events import subscriber
+
 
 @subscriber(NewRequest)
 def set_request_locale(event):
@@ -25,8 +27,8 @@ def set_request_locale(event):
             request._LOCALE_ = lang
             break
         else:
-            request._LOCALE_ = settings['default_locale_name'] 
-            
+            request._LOCALE_ = settings['default_locale_name']
+
 
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
@@ -35,13 +37,14 @@ def main(global_config, **settings):
     initialize_sql(engine)
     config = Configurator(settings=settings)
 
-#    config.add_subscriber('pyramidchameleoni18n.subscribers.add_renderer_globals',
-#                          'pyramid.events.BeforeRender')
+#    config.add_subscriber(
+#        'pyramidchameleoni18n.subscribers.add_renderer_globals',
+#        'pyramid.events.BeforeRender')
 #    config.add_subscriber('pyramidchameleoni18n.subscribers.add_localizer',
 #                          'pyramid.events.NewRequest')
-    
     config.add_translation_dirs('pyramidchameleoni18n:locale')
-    config.add_static_view('static', 'pyramidchameleoni18n:static', cache_max_age=3600)
+    config.add_static_view('static',
+                           'pyramidchameleoni18n:static', cache_max_age=3600)
     config.add_route('home', '/')
     config.add_view('pyramidchameleoni18n.views.my_view',
                     route_name='home',
@@ -58,4 +61,3 @@ def main(global_config, **settings):
                     renderer='templates/deform-form.pt')
 
     return config.make_wsgi_app()
-
