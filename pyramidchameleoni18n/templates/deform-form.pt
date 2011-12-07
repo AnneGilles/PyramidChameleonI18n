@@ -36,6 +36,13 @@
     </div>
     <div id="bottom">
       <div class="bottom">
+	<div i18n:translate="">
+	  <p>A simple test. In the form below, translations don't work. Probably my fault.</p>
+	  <ul>
+	    <li>"Your Name" should translate to "Ihr Name". actual result: <span i18n:translate="">Your Name</span></li>
+	    <li>"Email Address" should translate to "Email-Adresse". actual result: <span i18n:translate="">Email-Adresse</span></li>
+	  </ul>
+	</div>
 	<div id="form" i18n:translate="" tal:replace="structure form"/>
       </div>
     </div>
